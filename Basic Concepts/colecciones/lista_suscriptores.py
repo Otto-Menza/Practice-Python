@@ -1,25 +1,46 @@
 # Lista de suscriptores con Set
-suscriptores = {'julianqemail.com', 'paglo@email.com', 'fer@email.com'}
-print(f'Lista actual de suscriptores: {suscriptores}')
 
-#Agregar nuevo suscriptor:
-nuevo_suscriptor = 'Fer@email.com'
-if nuevo_suscriptor in suscriptores:
-    print(f'Suscriptor {nuevo_suscriptor} ya existe!')
-else:
+#Para crear un set vacio usamos el funcion set:
+suscriptores = set()
+numero_suscriptores = int(input('Ingresa cantidad de suscriptores que vas a agregar: '))
+
+#se usa _ para indicar que el indice de la coleccion y que no se va a usar
+for _ in range(numero_suscriptores):
+    nuevo_suscriptor = input('Correo de nuevo suscriptor: ')
+    while nuevo_suscriptor in suscriptores:
+        print(f'Suscriptor {nuevo_suscriptor} Ya existe')
+        nuevo_suscriptor = input('Correo de nuevo suscriptor: ')
     suscriptores.add(nuevo_suscriptor)
-    print('Nuevo suscriptor agregado')
-    print(suscriptores)
 
-#eliminar suscriptor
-eliminar_suscriptor = 'Fer@email.com'
-if nuevo_suscriptor in suscriptores:
-    suscriptores.remove(eliminar_suscriptor)
-    print(f'Suscriptor Eliminado')
-else:
-    print('Suscriptor NO existe')
+print(f'Lista actual de suscriptores: {suscriptores}')
+salir = False
 
-print(f'Lista: {suscriptores}')
+while not salir:
+    print(f'''Menu de suscriptores
+        1) Agregar suscriptor
+        2) Eliminar suscriptor
+        3) Ver lista de suscriptores
+        4) salir
+        ''')
+    opcion = int(input('Ingresa una opción: '))
+    if opcion == 1:
+        nuevo_suscriptor = input('Correo de nuevo suscriptor: ')
+        while nuevo_suscriptor in suscriptores:
+            print(f'Suscriptor {nuevo_suscriptor} Ya existe')
+            nuevo_suscriptor = input('Correo de nuevo suscriptor: ')
+        suscriptores.add(nuevo_suscriptor)
+    elif opcion == 2:
+        eliminar_suscriptor = input('Correo de suscriptor a eliminar: ')
+        while eliminar_suscriptor not in suscriptores:
+            print(f'Suscriptor {eliminar_suscriptor} NO existe')
+            eliminar_suscriptor = input('Correo de suscriptor a eliminar: ')
+        suscriptores.remove(eliminar_suscriptor)
+    elif opcion == 3:
+        contador = 1
+        for suscriptor in suscriptores:
+            print(f'{contador}) {suscriptor}')
+            contador += 1
+    elif opcion == 4:
+        print('Saliendo del sistema...')
+        salir = True
 
-#Cantidad de suscriptores
-print(f'Canditdad de suscriptores: {len(suscriptores)}')
