@@ -21,7 +21,6 @@ inventario = [
 ]
 
 def mostrar_inventario():
-    global inventario
     for producto in inventario:
         print(f'ID: {producto.get('id')} | Nombre: {producto.get('nombre')}, Precio: ${producto.get('precio')}, Canridad: {producto.get('cantidad')}')
 
@@ -31,7 +30,6 @@ def agregar_producto():
     nombre = input('Nombre: ')
     precio = float(input('Precio: '))
     cantidad = int(input('Cantidad: '))
-    global inventario
     inventario.append({
         'id': id,
         'nombre': nombre,
