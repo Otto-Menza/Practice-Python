@@ -1,0 +1,16 @@
+from libro import Libro
+from biblioteca import Biblioteca
+biblioteca1 = Biblioteca('Biblioteca No 1')
+libro1 = Libro('Ciena años ..', 'Gabriel', 'Ficcion')
+libro2 = Libro('Don quijote ..', 'Miguel', 'Comedia')
+libro3 = Libro('El amor ..', 'Gabriel', 'Ficcion')
+libro4 = Libro('Pedro paramo', 'Juan', 'Ficcion')
+libro5 = Libro('Pantalon y..', 'Mario', 'Comedia')
+biblioteca1.agregar_libro(libro1)
+biblioteca1.agregar_libro(libro2)
+biblioteca1.agregar_libro(libro3)
+biblioteca1.agregar_libro(libro4)
+biblioteca1.agregar_libro(libro5)
+biblioteca1.mostrar_todos_los_libros()
+biblioteca1.buscar_libros_por_autor('Gabriel')
+biblioteca1.buscar_libro_por_genero('Ficcion')
