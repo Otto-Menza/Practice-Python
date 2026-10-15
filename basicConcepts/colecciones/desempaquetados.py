@@ -9,3 +9,4 @@ print(f'Valores de la tupla: {producto}')
 
 #Valores independientes:
 print(f'Producto: id: {id}, descripcion: {descripcion}, precio: {precio}')
+
