@@ -1,0 +1,5 @@
+0,papas,3500
+0,Agua,2500
+0,Chocorramo,3700
+4,Helado,6200.0
+5,Chetos,2500.0
