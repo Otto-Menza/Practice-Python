@@ -11,7 +11,7 @@ personas_db = mysql.connector.connect(
 #Ejecutar la sentencia SELECT
 cursor = personas_db.cursor()
 sentencia_sql = 'INSERT INTO personas(nombre, apellido, edad) VALUES(%s, %s, %s)'
-valores = ('Victor', 'Perez', 56)
+valores = ('Jose', 'Gonzalez', 75)
 cursor.execute(sentencia_sql, valores)
 personas_db.commit()
 print(f'Se ha agregado los nuevos registros a la base de datos: {valores}')
